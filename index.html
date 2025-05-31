@@ -1576,17 +1576,7 @@
         document.getElementById('cta-button').addEventListener('click', redirectUser);
         document.getElementById('floating-cta').addEventListener('click', redirectUser);
         
-        // Popup urgent au chargement
-        window.addEventListener('DOMContentLoaded', () => {
-            Swal.fire({
-                title: 'ATTENTION!',
-                html: 'Votre éligibilité expire dans <strong>5 minutes</strong>!<br><br>Cliquez sur le bouton ci-dessous pour vérifier maintenant.',
-                icon: 'warning',
-                confirmButtonText: 'VÉRIFIER MAINTENANT',
-                background: 'rgba(255, 255, 255, 0.95)',
-                confirmButtonColor: '#FF0000',
-                allowOutsideClick: false
-            });
+    
         });
         
         // Popup urgent après 15 secondes
