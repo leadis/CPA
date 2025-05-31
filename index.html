@@ -6,6 +6,8 @@
     <title>🚨 GAGNEZ un iPhone 16 + 100€ + Cadeaux Exclusifs 🚨</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <link rel="preload" href="philippea.png" as="image">
+    <link rel="preload" href="philippee.png" as="image">
     <style>
         :root {
             --primary-blue: #00B4DB;
@@ -14,6 +16,7 @@
             --sky-blue: #E0F7FA;
             --gold: #FFD700;
             --white: #FFFFFF;
+            --red: #FF0000;
             --blue-gradient: linear-gradient(135deg, #00B4DB 0%, #0083B0 100%);
             --light-gradient: linear-gradient(to right, #E0F7FA, #B2EBF2);
         }
@@ -226,6 +229,43 @@
             font-size: 1rem;
         }
         
+        .reasons {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0, 180, 219, 0.1);
+        }
+        
+        .reasons h3 {
+            color: var(--secondary-blue);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .reasons ul {
+            list-style-type: none;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .reasons li {
+            padding: 15px;
+            font-size: 1.2rem;
+            border-bottom: 1px solid rgba(0, 180, 219, 0.2);
+            position: relative;
+            padding-left: 40px;
+        }
+        
+        .reasons li:before {
+            content: '✓';
+            color: #00B4DB;
+            font-weight: bold;
+            position: absolute;
+            left: 10px;
+        }
+        
         .countdown {
             text-align: center;
             margin: 50px 0;
@@ -297,6 +337,48 @@
             letter-spacing: 1px;
         }
         
+        .progress-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 40px auto;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            padding: 5px;
+            border: 2px solid var(--primary-blue);
+            box-shadow: 0 5px 20px rgba(0, 180, 219, 0.2);
+        }
+        
+        .progress-bar {
+            height: 30px;
+            border-radius: 10px;
+            background: var(--blue-gradient);
+            width: 92%;
+            position: relative;
+            animation: progress-animation 2s ease-in-out infinite;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 15px;
+            color: white;
+            font-weight: bold;
+            font-size: 1rem;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        @keyframes progress-animation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .progress-text {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 1.1rem;
+            color: var(--secondary-blue);
+            font-weight: 600;
+        }
+        
         .cta-container {
             text-align: center;
             margin: 60px 0;
@@ -363,48 +445,6 @@
             background: linear-gradient(to right, #00B4DB, #0083B0);
         }
         
-        .progress-container {
-            width: 100%;
-            max-width: 600px;
-            margin: 40px auto;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 15px;
-            padding: 5px;
-            border: 2px solid var(--primary-blue);
-            box-shadow: 0 5px 20px rgba(0, 180, 219, 0.2);
-        }
-        
-        .progress-bar {
-            height: 30px;
-            border-radius: 10px;
-            background: var(--blue-gradient);
-            width: 92%;
-            position: relative;
-            animation: progress-animation 2s ease-in-out infinite;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            padding-right: 15px;
-            color: white;
-            font-weight: bold;
-            font-size: 1rem;
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-        }
-        
-        @keyframes progress-animation {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        
-        .progress-text {
-            text-align: center;
-            margin-top: 15px;
-            font-size: 1.1rem;
-            color: var(--secondary-blue);
-            font-weight: 600;
-        }
-        
         .live-messages {
             margin: 50px auto;
             max-width: 600px;
@@ -439,6 +479,71 @@
             font-weight: bold;
             font-size: 1.5rem;
             margin-right: 15px;
+        }
+        
+        .testimonials {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .testimonial {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 25px;
+            max-width: 350px;
+            box-shadow: 0 10px 30px rgba(0, 180, 219, 0.1);
+            border: 1px solid rgba(0, 180, 219, 0.2);
+        }
+        
+        .testimonial img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid var(--primary-blue);
+        }
+        
+        .testimonial p {
+            font-style: italic;
+            color: #555;
+        }
+        
+        .faq {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 50px 0;
+            box-shadow: 0 10px 30px rgba(0, 180, 219, 0.1);
+        }
+        
+        .faq h3 {
+            color: var(--secondary-blue);
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(0, 180, 219, 0.2);
+            padding-bottom: 20px;
+        }
+        
+        .faq-question {
+            font-weight: bold;
+            color: var(--secondary-blue);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        
+        .faq-answer {
+            color: #555;
+            padding-left: 20px;
         }
         
         .guarantee {
@@ -677,6 +782,11 @@
                 font-size: 1rem;
                 padding: 15px 30px;
                 width: 100%;
+                position: fixed;
+                bottom: 20px;
+                left: 10px;
+                right: 10px;
+                z-index: 1000;
             }
             
             .gift-card {
@@ -686,6 +796,11 @@
             
             .guarantee-item {
                 padding: 10px 15px;
+            }
+            
+            .reasons li {
+                font-size: 1rem;
+                padding-left: 30px;
             }
         }
     </style>
@@ -707,8 +822,8 @@
     <div class="container">
         <header>
             <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Logo Premium" class="logo animate__animated animate__fadeIn">
-            <h1 class="animate__animated animate__fadeIn">🚨 VOTRE COMPTE A ÉTÉ SÉLECTIONNÉ ! 🚨</h1>
-            <h2 class="subtitle animate__animated animate__fadeIn animate__delay-1s">Gagnez un iPhone 16 + 100€ + 50€ chez Amazon & McDonald's !</h2>
+            <h1 class="animate__animated animate__fadeIn">🚨 VOTRE COMPTE A ÉTÉ SÉLECTIONNÉ POUR UN IPHONE 16 ! 🚨</h1>
+            <h2 class="subtitle animate__animated animate__fadeIn animate__delay-1s">Félicitations ! Vous faites partie des 5% d'utilisateurs éligibles aujourd'hui</h2>
             <div class="badge animate__animated animate__pulse animate__infinite">Offre 100% gratuite • Valable 24h seulement</div>
         </header>
         
@@ -752,6 +867,15 @@
             </div>
         </div>
         
+        <div class="reasons">
+            <h3>Pourquoi avez-vous été sélectionné ?</h3>
+            <ul>
+                <li>✅ Vous êtes un utilisateur actif dans votre région</li>
+                <li>✅ Votre profil correspond à notre étude marketing</li>
+                <li>✅ Vous avez été choisi aléatoirement parmi 10 000 visiteurs</li>
+            </ul>
+        </div>
+        
         <div class="countdown animate__animated animate__fadeIn animate__delay-3s">
             <div class="countdown-title">L'OFFRE EXPIRE DANS:</div>
             <div class="countdown-timer">
@@ -777,19 +901,50 @@
         
         <div class="cta-container animate__animated animate__fadeIn animate__delay-4s">
             <button class="cta-button animate__animated animate__pulse animate__infinite" id="cta-button">
-                👉 VÉRIFIEZ VOTRE ÉLIGIBILITÉ MAINTENANT (5 secondes)
+                🎁 JE VEUX MON IPHONE 16 GRATUIT (Dernières places)
             </button>
         </div>
         
-        <div class="live-messages animate__animated animate__fadeIn animate__delay-3s">
+        <div class="live-messages animate__animated animate__fadeIn animate__delay-3s" id="live-messages">
             <div class="live-message animate__animated animate__fadeIn animate__delay-3-5s">
-                <strong>Paul (France)</strong> a gagné il y a 2 minutes !
+                <strong>Marie (Paris) vient de gagner son iPhone 16!</strong>
             </div>
             <div class="live-message animate__animated animate__fadeIn animate__delay-4s">
-                <strong>Emma (Belgique)</strong> vient de réclamer son iPhone 16 !
+                <strong>2 iPhones 16 revendiqués dans les 5 dernières minutes</strong>
             </div>
             <div class="live-message animate__animated animate__fadeIn animate__delay-4-5s">
-                <strong>Lucas (Canada)</strong> a reçu ses 100€ via PayPal !
+                <strong>Attention: Plus que 3 cadeaux disponibles aujourd'hui</strong>
+            </div>
+        </div>
+        
+        <div class="testimonials">
+            <div class="testimonial">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Jean D.">
+                <p>"J'ai reçu mon iPhone en 48h, je n'en revenais pas! Tout est parfaitement fonctionnel et neuf. Merci pour cette opportunité incroyable!"</p>
+            </div>
+            <div class="testimonial">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sophie M.">
+                <p>"Les 100€ PayPal sont arrivés instantanément après validation. J'ai pu m'acheter des accessoires pour mon nouveau iPhone. Incroyable!"</p>
+            </div>
+            <div class="testimonial">
+                <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Thomas L.">
+                <p>"Je pensais que c'était une arnaque au début, mais tout est 100% réel. Le processus a pris moins de 2 minutes. Merci!"</p>
+            </div>
+        </div>
+        
+        <div class="faq">
+            <h3>Questions fréquentes</h3>
+            <div class="faq-item">
+                <div class="faq-question">Est-ce vraiment gratuit?</div>
+                <div class="faq-answer">Absolument! Aucun paiement requis. Cette offre est financée par nos partenaires marketing.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Combien de temps pour recevoir mon cadeau?</div>
+                <div class="faq-answer">Livraison sous 48h pour l'iPhone après validation. Les cadeaux numériques (PayPal, Amazon) sont envoyés immédiatement.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Pourquoi suis-je éligible?</div>
+                <div class="faq-answer">Notre système a sélectionné aléatoirement votre profil parmi nos utilisateurs actifs cette semaine.</div>
             </div>
         </div>
         
@@ -838,6 +993,7 @@
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
     <script>
         // Initialisation des particules bleues
         particlesJS("particles-js", {
@@ -992,6 +1148,57 @@
         setInterval(updateCountdown, 1000);
         updateCountdown();
         
+        // Barre de progression dynamique
+        let progress = 92;
+        setInterval(() => {
+            if (progress < 99) {
+                progress += Math.random();
+                document.querySelector('.progress-bar').style.width = `${progress}%`;
+                document.querySelector('.progress-bar').textContent = 
+                    `${Math.floor(progress)}% COMPLÈTE`;
+                document.querySelector('.progress-text').textContent = 
+                    `${Math.floor(progress)}% des utilisateurs valident leur offre - Plus que ${Math.floor(100-progress)} places disponibles !`;
+            }
+        }, 30000);
+        
+        // Messages en direct dynamiques
+        const messages = [
+            "Marie (Paris) vient de gagner son iPhone 16!",
+            "2 iPhones 16 revendiqués dans les 5 dernières minutes",
+            "Attention: Plus que 3 cadeaux disponibles aujourd'hui",
+            "Nouveau gagnant: Thomas (Lyon) a reçu son iPhone!",
+            "Les cadeaux partent vite - Validez maintenant!",
+            "Sophie (Marseille) a reçu ses 100€ PayPal"
+        ];
+        
+        function updateLiveMessages() {
+            const container = document.querySelector('.live-messages');
+            container.innerHTML = '';
+            
+            // Sélectionner 3 messages aléatoires
+            const shuffled = [...messages].sort(() => 0.5 - Math.random());
+            const selectedMessages = shuffled.slice(0, 3);
+            
+            selectedMessages.forEach(msg => {
+                const element = document.createElement('div');
+                element.className = 'live-message';
+                element.innerHTML = `<strong>${msg}</strong>`;
+                container.appendChild(element);
+            });
+            
+            // Animation
+            gsap.from(".live-message", {
+                y: 50,
+                opacity: 0,
+                duration: 0.5,
+                stagger: 0.3,
+                delay: 0.5
+            });
+        }
+        
+        setInterval(updateLiveMessages, 8000);
+        updateLiveMessages();
+        
         // Animation GSAP pour les éléments
         gsap.from(".iphone-container", {
             duration: 2,
@@ -1042,6 +1249,9 @@
                 } else {
                     deviceType = 'PC';
                 }
+                
+                // Tracking de l'action
+                trackAction('cta_click', country, deviceType);
                 
                 // Mapping des liens CPAgrip
                 // REMPLACEZ CES LIENS PAR VOS 24 LIENS CPAgrip
@@ -1113,8 +1323,27 @@
             }
         }
         
+        // Fonction de tracking (simulée)
+        function trackAction(action, country, deviceType) {
+            console.log(`Action: ${action}, Pays: ${country}, Appareil: ${deviceType}`);
+            // Ici vous pourriez envoyer ces données à votre système d'analyse
+        }
+        
         // Gestion du clic sur le bouton CTA
         document.getElementById('cta-button').addEventListener('click', redirectUser);
+        
+        // Popup urgent au chargement
+        window.addEventListener('DOMContentLoaded', () => {
+            Swal.fire({
+                title: 'ATTENTION!',
+                html: 'Votre éligibilité expire dans <strong>5 minutes</strong>!<br><br>Cliquez sur le bouton ci-dessous pour vérifier maintenant.',
+                icon: 'warning',
+                confirmButtonText: 'VÉRIFIER MAINTENANT',
+                background: 'rgba(255, 255, 255, 0.95)',
+                confirmButtonColor: '#FF0000',
+                allowOutsideClick: false
+            });
+        });
         
         // Popup urgent après 15 secondes
         setTimeout(() => {
@@ -1146,16 +1375,14 @@
         }, 15000);
         
         // Animation au scroll
-        gsap.registerPlugin(ScrollTrigger);
-        
-        gsap.utils.toArray(".gift-card").forEach(card => {
-            gsap.from(card, {
+        gsap.utils.toArray(".gift-card, .testimonial, .faq-item").forEach(element => {
+            gsap.from(element, {
                 scrollTrigger: {
-                    trigger: card,
+                    trigger: element,
                     start: "top 80%",
                     toggleActions: "play none none none"
                 },
-                x: 100,
+                y: 50,
                 opacity: 0,
                 duration: 1,
                 ease: "power3.out"
