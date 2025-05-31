@@ -930,9 +930,17 @@
             }
             
             .cta-button {
-                font-size: 1rem;
-                padding: 15px 30px;
-            }
+        font-size: 1.2rem;
+        padding: 20px;
+        position: fixed;
+        bottom: 20px;
+        left: 50%; /* Centre horizontalement */
+        transform: translateX(-50%); /* Ajustement précis */
+        width: calc(100% - 40px); /* Largeur totale moins les marges */
+        max-width: 350px; /* Largeur maximale */
+        z-index: 1000;
+        margin: 0 auto; /* Centre le bouton */
+    }
             
             .gift-card {
                 flex-direction: column;
