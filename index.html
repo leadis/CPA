@@ -826,6 +826,412 @@
                 width: 150px;
                 height: 150px;
             }
+            /* Nouveaux styles pour l'en-tête premium */
+.premium-header {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.logo-container {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 20px;
+    perspective: 1000px;
+}
+
+.logo-3d {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    animation: float-logo 8s ease-in-out infinite;
+}
+
+@keyframes float-logo {
+    0%, 100% { transform: translateY(0) rotateX(0deg) rotateY(0deg); }
+    25% { transform: translateY(-15px) rotateX(5deg) rotateY(5deg); }
+    50% { transform: translateY(-10px) rotateX(0deg) rotateY(10deg); }
+    75% { transform: translateY(-15px) rotateX(5deg) rotateY(5deg); }
+}
+
+.logo-main {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 15px rgba(0, 180, 219, 0.7));
+    position: relative;
+    z-index: 2;
+}
+
+.logo-reflection {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background: linear-gradient(to top, rgba(255,255,255,0.8), transparent);
+    transform: rotateX(70deg);
+    opacity: 0.6;
+    z-index: 1;
+    border-radius: 50%;
+    filter: blur(5px);
+}
+
+.logo-light {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0,180,219,0.4) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    animation: pulse-light 3s infinite alternate;
+}
+
+@keyframes pulse-light {
+    0% { opacity: 0.3; }
+    100% { opacity: 0.7; }
+}
+
+.logo-badge {
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    color: #333;
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.5);
+    z-index: 3;
+    border: 2px solid white;
+}
+
+.title-container {
+    position: relative;
+    margin: 30px auto;
+    max-width: 800px;
+    padding: 20px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.holographic-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, 
+        rgba(0, 180, 219, 0.1) 0%, 
+        rgba(0, 131, 176, 0.2) 20%, 
+        rgba(255, 215, 0, 0.1) 40%,
+        rgba(0, 180, 219, 0.1) 60%,
+        rgba(0, 131, 176, 0.2) 80%,
+        rgba(255, 215, 0, 0.1) 100%);
+    background-size: 400% 400%;
+    animation: hologram 12s ease infinite;
+    z-index: -1;
+}
+
+@keyframes hologram {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.main-title {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+.title-gradient {
+    background: linear-gradient(135deg, #00B4DB, #0083B0, #FFD700);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: block;
+}
+
+.title-sub {
+    display: block;
+    font-size: 1.5rem;
+    color: #333;
+    margin-top: 10px;
+}
+
+.offer-badge {
+    background: linear-gradient(135deg, #00B4DB, #0083B0);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    display: inline-block;
+    margin: 20px auto;
+    box-shadow: 0 5px 25px rgba(0, 180, 219, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+.badge-content {
+    position: relative;
+    z-index: 2;
+}
+
+.badge-text {
+    display: block;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.badge-counter {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.offer-badge::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to bottom right,
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0.3),
+        rgba(255, 255, 255, 0)
+    );
+    transform: rotate(30deg);
+    animation: shine 3s infinite;
+}
+            /* Styles pour la section témoignages */
+.testimonials-section {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 30px;
+    margin: 50px auto;
+    max-width: 1000px;
+    box-shadow: 0 10px 30px rgba(0, 180, 219, 0.2);
+    border: 1px solid rgba(0, 180, 219, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.section-header {
+    position: relative;
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+}
+
+.section-header h2 {
+    font-size: 2rem;
+    color: var(--secondary-blue);
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+}
+
+.highlight {
+    background: linear-gradient(to right, #FFD700, #FFA500);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: bold;
+}
+
+.live-pulse {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(to right, #ff0000, #ff5e00);
+    border-radius: 3px;
+    animation: pulse-red 1.5s infinite;
+}
+
+@keyframes pulse-red {
+    0% { opacity: 0.7; }
+    50% { opacity: 1; }
+    100% { opacity: 0.7; }
+}
+
+.live-badge {
+    position: absolute;
+    top: -15px;
+    right: -10px;
+    background: #ff0000;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    transform: rotate(5deg);
+    box-shadow: 0 3px 10px rgba(255, 0, 0, 0.3);
+    animation: pulse-badge 2s infinite;
+}
+
+@keyframes pulse-badge {
+    0% { transform: rotate(5deg) scale(1); }
+    50% { transform: rotate(5deg) scale(1.05); }
+    100% { transform: rotate(5deg) scale(1); }
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.testimonial-card {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 180, 219, 0.2);
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 180, 219, 0.2);
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.user-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--primary-blue);
+    margin-right: 15px;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.user-name {
+    font-weight: bold;
+    color: #333;
+}
+
+.user-location {
+    font-size: 0.8rem;
+    color: #777;
+}
+
+.verified-badge {
+    width: 20px;
+    height: 20px;
+}
+
+.testimonial-content p {
+    color: #555;
+    font-style: italic;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.testimonial-content p::before {
+    content: '"';
+    position: absolute;
+    left: 0;
+    top: -10px;
+    font-size: 3rem;
+    color: rgba(0, 180, 219, 0.2);
+    font-family: serif;
+    line-height: 1;
+}
+
+.testimonial-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
+
+.timestamp {
+    color: #777;
+}
+
+.gift-received {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0, 180, 219, 0.1);
+    padding: 5px 10px;
+    border-radius: 30px;
+}
+
+.gift-received img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.gift-received span {
+    font-size: 0.8rem;
+    color: var(--secondary-blue);
+    font-weight: 500;
+}
+
+.security-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px dashed rgba(0, 180, 219, 0.3);
+    color: var(--secondary-blue);
+    font-size: 0.9rem;
+}
+
+.security-badge svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Animation pour l'apparition des témoignages */
+.testimonial-card {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s forwards;
+}
+
+.testimonial-card:nth-child(1) { animation-delay: 0.3s; }
+.testimonial-card:nth-child(2) { animation-delay: 0.6s; }
+.testimonial-card:nth-child(3) { animation-delay: 0.9s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
         }
     </style>
 </head>
@@ -844,29 +1250,38 @@
     <div class="snowflakes" id="snowflakes"></div>
     
     <div class="container">
-        <header>
-            <!-- Nouveau conteneur premium pour le logo -->
-            <div class="premium-badge animate__animated animate__fadeInDown">
-                <div class="badge-inner">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Logo Premium" class="logo">
-                    <div class="badge-shine"></div>
-                </div>
-            </div>
-            
-            <!-- Titre avec effet breaking news -->
-            <div class="breaking-news animate__animated animate__fadeIn">
-                <div class="news-ticker">
-                    <span>🚨 EXCLUSIF 🚨</span>
-                    <h1>VOTRE COMPTE A ÉTÉ SÉLECTIONNÉ !</h1>
-                </div>
-                <div class="news-flash"></div>
-            </div>
-            
-            <h2 class="subtitle animate__animated animate__fadeIn animate__delay-1s">
-                <span class="highlight-text">Gagnez un iPhone 16 Pro Max + 100€ + 50€ chez Amazon & McDonald's !</span>
-            </h2>
-            <div class="badge animate__animated animate__pulse animate__infinite">Offre certifiée • Valable 24h seulement</div>
-        </header>
+        <!-- Remplacer la section header actuelle par ceci -->
+<header class="premium-header">
+    <!-- Logo avec effet 3D et lumière -->
+    <div class="logo-container animate__animated animate__fadeInDown">
+        <div class="logo-3d">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Logo Premium" class="logo-main">
+            <div class="logo-reflection"></div>
+            <div class="logo-light"></div>
+        </div>
+        <div class="logo-badge animate__animated animate__pulse animate__infinite">
+            <span>OFFRE EXCLUSIVE</span>
+        </div>
+    </div>
+    
+    <!-- Titre avec effet "holographique" -->
+    <div class="title-container animate__animated animate__fadeIn">
+        <div class="holographic-effect"></div>
+        <h1 class="main-title">
+            <span class="title-gradient">FÉLICITATIONS !</span>
+            <span class="title-sub">VOTRE COMPTE A ÉTÉ SÉLECTIONNÉ</span>
+        </h1>
+        <div class="title-ornament"></div>
+    </div>
+    
+    <!-- Badge avec compteur live -->
+    <div class="offer-badge animate__animated animate__pulse animate__infinite">
+        <div class="badge-content">
+            <span class="badge-text">OFFRE LIMITÉE</span>
+            <span class="badge-counter">15 PERSONNES EN PROFITENT MAINTENANT</span>
+        </div>
+    </div>
+</header>
         
         <div class="offer-container">
             <div class="iphone-container">
@@ -937,17 +1352,94 @@
             </button>
         </div>
         
-        <div class="live-messages animate__animated animate__fadeIn animate__delay-3s">
-            <div class="live-message animate__animated animate__fadeIn animate__delay-3-5s">
-                <strong>Paul (France)</strong> a gagné il y a 2 minutes !
+        <!-- Remplacer la section live-messages par ceci -->
+<div class="testimonials-section">
+    <div class="section-header">
+        <h2>ILS ONT GAGNÉ <span class="highlight">AVANT VOUS</span></h2>
+        <div class="live-pulse"></div>
+        <span class="live-badge">EN DIRECT</span>
+    </div>
+    
+    <div class="testimonials-grid">
+        <!-- Témoignage 1 avec photo -->
+        <div class="testimonial-card">
+            <div class="user-profile">
+                <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Marie D." class="user-avatar">
+                <div class="user-info">
+                    <span class="user-name">Marie D.</span>
+                    <span class="user-location">Paris, France</span>
+                </div>
+                <div class="verified-badge">
+                    <svg viewBox="0 0 24 24" fill="#00B4DB"><path d="M12 2C6.5 2 2 6.5 2 12S6.5 22 12 22 22 17.5 22 12 17.5 2 12 2M10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z"/></svg>
+                </div>
             </div>
-            <div class="live-message animate__animated animate__fadeIn animate__delay-4s">
-                <strong>Emma (Belgique)</strong> vient de réclamer son iPhone 16 !
-            </div>
-            <div class="live-message animate__animated animate__fadeIn animate__delay-4-5s">
-                <strong>Lucas (Canada)</strong> a reçu ses 100€ via PayPal !
+            <div class="testimonial-content">
+                <p>"Je n'y croyais pas mais j'ai reçu mon iPhone 16 Pro Max en 72h seulement ! La livraison était suivie et le colis bien protégé. Un énorme merci !"</p>
+                <div class="testimonial-meta">
+                    <span class="timestamp">Il y a 15 minutes</span>
+                    <div class="gift-received">
+                        <img src="philippee.png" alt="iPhone" class="gift-icon">
+                        <span>iPhone 16 Pro Max</span>
+                    </div>
+                </div>
             </div>
         </div>
+        
+        <!-- Témoignage 2 avec photo -->
+        <div class="testimonial-card">
+            <div class="user-profile">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Thomas L." class="user-avatar">
+                <div class="user-info">
+                    <span class="user-name">Thomas L.</span>
+                    <span class="user-location">Lyon, France</span>
+                </div>
+                <div class="verified-badge">
+                    <svg viewBox="0 0 24 24" fill="#00B4DB"><path d="M12 2C6.5 2 2 6.5 2 12S6.5 22 12 22 22 17.5 22 12 17.5 2 12 2M10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z"/></svg>
+                </div>
+            </div>
+            <div class="testimonial-content">
+                <p>"Les 100€ PayPal sont arrivés instantanément après validation. J'ai pu les utiliser immédiatement. Je recommande à 100% !"</p>
+                <div class="testimonial-meta">
+                    <span class="timestamp">Il y a 28 minutes</span>
+                    <div class="gift-received">
+                        <img src="gift.jpg" alt="100€" class="gift-icon">
+                        <span>100€ PayPal</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Témoignage 3 avec photo -->
+        <div class="testimonial-card">
+            <div class="user-profile">
+                <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Sophie M." class="user-avatar">
+                <div class="user-info">
+                    <span class="user-name">Sophie M.</span>
+                    <span class="user-location">Marseille, France</span>
+                </div>
+                <div class="verified-badge">
+                    <svg viewBox="0 0 24 24" fill="#00B4DB"><path d="M12 2C6.5 2 2 6.5 2 12S6.5 22 12 22 22 17.5 22 12 17.5 2 12 2M10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z"/></svg>
+                </div>
+            </div>
+            <div class="testimonial-content">
+                <p>"Carte Amazon reçue par email en 1h avec le code. Déjà utilisé pour commander un casque Bluetooth. Incroyable !"</p>
+                <div class="testimonial-meta">
+                    <span class="timestamp">Il y a 42 minutes</span>
+                    <div class="gift-received">
+                        <img src="amazon.jpg" alt="Amazon" class="gift-icon">
+                        <span>Carte Amazon 50€</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Badge de sécurité -->
+    <div class="security-badge">
+        <svg viewBox="0 0 24 24" fill="#00B4DB"><path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,7C13.4,7 14.8,8.1 14.8,9.5V11C15.4,11 16,11.6 16,12.2V15.7C16,16.4 15.4,17 14.7,17H9.2C8.6,17 8,16.4 8,15.7V12.2C8,11.6 8.6,11 9.2,11V9.5C9.2,8.1 10.6,7 12,7M12,8.2C11.2,8.2 10.5,8.7 10.5,9.5V11H13.5V9.5C13.5,8.7 12.8,8.2 12,8.2Z"/></svg>
+        <span>Tous les témoignages sont vérifiés et authentiques</span>
+    </div>
+</div>
         
         <div class="guarantee">
             <div class="guarantee-item">
