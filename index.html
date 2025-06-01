@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🚨 GAGNEZ un iPhone 16 + 100€ + Cadeaux Exclusifs 🚨</title>
+    <title>🚨 GAGNEZ un iPhone 16 + 100€ + Cadeaux Exclusifs �</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <style>
@@ -294,6 +294,179 @@
         .gift-text p {
             color: #555;
             font-size: 1rem;
+        }
+        
+        /* NOUVEAUX STYLES POUR LA SECTION CADEAUX */
+        .gift-main {
+            position: relative;
+            border: 3px solid var(--gold);
+            background: linear-gradient(135deg, rgba(255,215,0,0.1) 0%, rgba(0,180,219,0.1) 100%);
+            transform-style: preserve-3d;
+        }
+
+        .gift-main::before {
+            content: '';
+            position: absolute;
+            top: -5px; left: -5px; right: -5px; bottom: -5px;
+            border: 2px solid rgba(255,215,0,0.5);
+            border-radius: 25px;
+            animation: pulse-gold 2s infinite;
+            z-index: -1;
+        }
+
+        @keyframes pulse-gold {
+            0% { opacity: 0.5; }
+            50% { opacity: 1; }
+            100% { opacity: 0.5; }
+        }
+
+        .gift-badge {
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            background: linear-gradient(to right, #FFD700, #FFA500);
+            color: #333;
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 0.8rem;
+            box-shadow: 0 3px 10px rgba(255,215,0,0.5);
+            z-index: 2;
+        }
+
+        .value-badge {
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: var(--blue-gradient);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-weight: bold;
+            box-shadow: 0 3px 10px rgba(0,180,219,0.5);
+            z-index: 2;
+        }
+
+        .highlight-price {
+            color: #FF0000;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .gift-features {
+            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .gift-features span {
+            background: rgba(0,180,219,0.1);
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            color: var(--secondary-blue);
+        }
+
+        .total-value {
+            margin: 30px auto;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        .total-value-inner {
+            background: rgba(255,255,255,0.9);
+            padding: 15px;
+            border-radius: 50px;
+            border: 2px dashed var(--primary-blue);
+            box-shadow: 0 5px 20px rgba(0,180,219,0.2);
+        }
+
+        .total-value span {
+            font-size: 1.2rem;
+            color: var(--secondary-blue);
+            margin: 0 10px;
+        }
+
+        .total-amount {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #FF0000;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .comparison-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin: 40px auto;
+            flex-wrap: wrap;
+        }
+
+        .comparison-item {
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            width: 300px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .comparison-item.before {
+            border: 2px solid #FF0000;
+        }
+
+        .comparison-item.after {
+            border: 2px solid #00AA00;
+            position: relative;
+        }
+
+        .comparison-item.after::before {
+            content: 'ÉCONOMIE DE 1 499€';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #00AA00;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        .comparison-item h4 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .comparison-item ul {
+            list-style: none;
+        }
+
+        .comparison-item li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #EEE;
+        }
+
+        .comparison-item li.total {
+            font-weight: bold;
+            font-size: 1.2rem;
+            border-bottom: none;
+            margin-top: 10px;
+        }
+
+        .comparison-arrow {
+            font-size: 2rem;
+            color: var(--primary-blue);
+            animation: bounce-horizontal 2s infinite;
+        }
+
+        @keyframes bounce-horizontal {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(10px); }
         }
         
         .countdown {
@@ -1295,6 +1468,29 @@
             .badge-counter {
                 font-size: 0.8rem;
             }
+
+            /* Styles responsive pour les nouvelles sections */
+            .comparison-section {
+                flex-direction: column;
+            }
+            
+            .comparison-arrow {
+                transform: rotate(90deg);
+                animation: bounce-vertical 2s infinite;
+            }
+            
+            @keyframes bounce-vertical {
+                0%, 100% { transform: rotate(90deg) translateY(0); }
+                50% { transform: rotate(90deg) translateY(10px); }
+            }
+            
+            .gift-features {
+                justify-content: center;
+            }
+            
+            .gift-main::before {
+                top: -3px; left: -3px; right: -3px; bottom: -3px;
+            }
         }
     </style>
 </head>
@@ -1352,23 +1548,34 @@
             </div>
             
             <div class="gifts-container">
-                <div class="gift-card animate__animated animate__fadeInRight animate__delay-1s">
+                <!-- iPhone - Carte principale améliorée -->
+                <div class="gift-card gift-main animate__animated animate__fadeInRight animate__delay-1s">
+                    <div class="gift-badge">PRINCIPAL</div>
                     <img src="philippee.png" alt="iPhone 16" class="gift-icon">
                     <div class="gift-text">
                         <h3>iPhone 16 Pro Max (256Go)</h3>
-                        <p>Dernière technologie Apple - Valeur: 1 299€</p>
+                        <p>Dernière technologie Apple - Valeur: <span class="highlight-price">1 299€</span></p>
+                        <div class="gift-features">
+                            <span>✓ Écran Super Retina XDR</span>
+                            <span>✓ Chip A18 Pro</span>
+                            <span>✓ Appareil photo 48MP</span>
+                        </div>
                     </div>
                 </div>
                 
+                <!-- 100€ PayPal - Avec badge de valeur -->
                 <div class="gift-card animate__animated animate__fadeInRight animate__delay-1-5s">
+                    <div class="value-badge">100€</div>
                     <img src="gift.jpg" alt="100€" class="gift-icon">
                     <div class="gift-text">
                         <h3>100€ en cash via PayPal</h3>
-                        <p>Argent utilisable immédiatement</p>
+                        <p>Argent utilisable immédiatement sur tous vos achats</p>
                     </div>
                 </div>
                 
+                <!-- Carte Amazon - Avec badge de valeur -->
                 <div class="gift-card animate__animated animate__fadeInRight animate__delay-2s">
+                    <div class="value-badge">50€</div>
                     <img src="amazon.jpg" alt="Cadeau Amazon" class="gift-icon">
                     <div class="gift-text">
                         <h3>Carte cadeau Amazon 50€</h3>
@@ -1376,13 +1583,46 @@
                     </div>
                 </div>
                 
+                <!-- McDonald's - Avec badge de valeur -->
                 <div class="gift-card animate__animated animate__fadeInRight animate__delay-2-5s">
+                    <div class="value-badge">50€</div>
                     <img src="dona.webp" alt="Cadeau McDonald's" class="gift-icon">
                     <div class="gift-text">
                         <h3>Bon repas McDonald's 50€</h3>
                         <p>Pour vous faire plaisir</p>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <!-- Nouvelle section : Valeur totale -->
+        <div class="total-value animate__animated animate__fadeInUp">
+            <div class="total-value-inner">
+                <span>Valeur totale des cadeaux :</span>
+                <span class="total-amount">1 499€</span>
+            </div>
+        </div>
+
+        <!-- Nouvelle section : Comparaison avant/après -->
+        <div class="comparison-section animate__animated animate__fadeInUp">
+            <div class="comparison-item before">
+                <h4>Sans cette offre</h4>
+                <ul>
+                    <li>iPhone 16 Pro Max : 1 299€</li>
+                    <li>100€ de cash : 100€</li>
+                    <li>Cadeaux divers : 100€</li>
+                    <li class="total">Total : 1 499€</li>
+                </ul>
+            </div>
+            <div class="comparison-arrow">➔</div>
+            <div class="comparison-item after">
+                <h4>Avec cette offre</h4>
+                <ul>
+                    <li>iPhone 16 Pro Max : 0€</li>
+                    <li>100€ de cash : 0€</li>
+                    <li>Cadeaux divers : 0€</li>
+                    <li class="total">Total : 0€</li>
+                </ul>
             </div>
         </div>
         
@@ -1721,6 +1961,23 @@
             stagger: 0.2,
             ease: "back.out",
             delay: 1
+        });
+
+        // Animation pour les nouvelles sections
+        gsap.from(".total-value", {
+            duration: 1,
+            y: 30,
+            opacity: 0,
+            ease: "power2.out",
+            delay: 1.5
+        });
+
+        gsap.from(".comparison-section", {
+            duration: 1,
+            y: 30,
+            opacity: 0,
+            ease: "power2.out",
+            delay: 2
         });
         
         // Effet de parallaxe pour l'iPhone
